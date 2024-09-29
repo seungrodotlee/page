@@ -3,8 +3,8 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/server'
-import { operationEnv } from '@/utils/env'
+import { createClient } from '@/@shared/utils/supabase/server'
+import { operationEnv } from '@/@shared/utils/env'
 
 export async function login(formData: FormData) {
   const supabase = createClient()

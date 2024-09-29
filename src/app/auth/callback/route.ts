@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 // The client you created from the Server-Side Auth instructions
-import { createClient } from '@/utils/supabase/server'
-import { operationEnv } from '@/utils/env'
+import { createClient } from '@/@shared/utils/supabase/server'
+import { operationEnv } from '@/@shared/utils/env'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)

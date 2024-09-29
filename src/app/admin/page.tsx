@@ -1,5 +1,5 @@
-import { Admin } from "@/pages/admin/admin.index";
-import { useUser } from "@/utils/supabase/user";
+import { Admin } from "@/@pages/admin/admin.index";
+import { useUser } from "@/@shared/utils/supabase/user";
 
 export default async function AdminPage() {
   useUser();
