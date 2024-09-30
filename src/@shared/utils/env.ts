@@ -1,3 +1,3 @@
-const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
 const isLocal = process.env.NEXT_PUBLIC_ENV === 'local';
-export const operationEnv = isLocal ? 'local' : isDev ? 'dev' : 'production';
+export const operationEnv = isProd ? 'production' : isLocal ? 'local' : 'dev';

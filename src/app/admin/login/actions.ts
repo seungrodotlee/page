@@ -32,7 +32,7 @@ export async function loginWithGithub() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: operationEnv === "local" ? "http://localhost:3000/auth/callback" : "https://seungrodotlee.vercel.app/auth/callback",
+      redirectTo: operationEnv === "local" ? `http://localhost:3000/auth/callback?next=${encodeURIComponent("/admin")}` : `https://seungrodotlee.vercel.app/auth/callback?next=${encodeURIComponent("/admin")}`,
     },
   })
 
