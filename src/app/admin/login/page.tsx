@@ -7,7 +7,7 @@ export default function LoginPage() {
       <button formAction={loginWithGithub}>Log in</button>
       <p>
         {process.env.NODE_ENV}
-        {operationEnv()}
+        {operationEnv}
       </p>
     </form>
   );

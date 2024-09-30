@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/@shared/utils/supabase/server'
+import { operationEnv } from '@/@shared/utils/env'
 
 export async function login(formData: FormData) {
   const supabase = createClient()
@@ -31,7 +32,7 @@ export async function loginWithGithub() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: `${process.env.VERCEL_URL?.includes("localhost") ? "http" : "https"}://${process.env.VERCEL_URL}/auth/callback?next=${encodeURIComponent("/admin")}`,
+      redirectTo: operationEnv === "local" ? `http://localhost:3000/auth/callback?next=${encodeURIComponent("/admin")}` : `https://seungrodotlee.vercel.app/auth/callback?next=${encodeURIComponent("/admin")}`,
     },
   })
 
