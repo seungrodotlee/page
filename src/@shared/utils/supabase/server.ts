@@ -1,7 +1,9 @@
 import { createServerClient } from '@supabase/ssr'
+import { SupabaseClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
+import { Database } from './database'
 
-export function createClient() {
+export function createClient(): SupabaseClient<Database, 'public'> {
   const cookieStore = cookies()
 
   return createServerClient(

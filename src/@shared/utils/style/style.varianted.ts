@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import { ClassProp, ClassValue, StringToBoolean } from "class-variance-authority/types";
 import { style } from "./style.index";
+import { c, C } from "./style.c";
 
 type ConfigSchema = Record<string, Record<string, ClassValue>>;
 
@@ -19,6 +20,7 @@ type Config<T> = T extends ConfigSchema ? {
 
 type Props<T> = T extends ConfigSchema ? ConfigVariants<T> & ClassProp : ClassProp;
 
-export function _varianted<T>(className?: ClassValue, config?: Config<T> | undefined) {
-  return (variant?: Props<T>) => style(cva(className, config)(variant));
+export function _varianted<T>(className?: ClassValue, config?: (c: C) => Config<T>) {
+  
+  return (variant?: Props<T>) => style(cva(className, config?.(c))(variant));
 }
