@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react";
 
-export function getNestedComponent<M extends Boolean = false>(
+export function getNestedComponent<M extends boolean = false>(
   children: ReactNode,
   type: JSXElementConstructor<any>,
   options?: {
