@@ -1,4 +1,5 @@
 import { select } from "@/@shared/supabase/select";
+
 import { main } from "./main.style";
 
 export async function Main() {
