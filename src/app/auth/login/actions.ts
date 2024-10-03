@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 
-import { createClient } from "@/@shared/utils/supabase/server";
+import { createClient } from "@/@shared/supabase/server";
 import { operationEnv } from "@/@shared/utils/env";
 
 export async function loginWithGithub() {

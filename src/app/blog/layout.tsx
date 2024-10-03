@@ -7,7 +7,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Header current="about" />
+      <Header current="blog">
+        <Header.Accessory>
+          <input />
+          검색
+        </Header.Accessory>
+      </Header>
       {children}
     </>
   );
