@@ -1,3 +1,3 @@
-import { serverContenxt } from "@/@shared/utils/server/server-context";
+import { serverContext } from "@/@shared/utils/server/server-context";
 
-export const editorContext = serverContenxt<Record<string, string>>();
+export const editorContext = serverContext<Record<string, string>>();

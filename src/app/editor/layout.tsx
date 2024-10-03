@@ -1,5 +1,6 @@
-import { logout } from "../auth/login/actions";
 import { Header } from "@/@shared/components/header/header.index";
+
+import { logout } from "../auth/login/actions";
 
 export default function Layout({
   children,

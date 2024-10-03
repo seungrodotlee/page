@@ -66,7 +66,7 @@ export type Database = {
           },
         ]
       }
-      blogs: {
+      articles: {
         Row: {
           content: string
           created_at: string
@@ -87,25 +87,25 @@ export type Database = {
         }
         Relationships: []
       }
-      blogs_tags_relation: {
+      articles_tags_relation: {
         Row: {
-          blog: number
+          article: number
           tag: number
         }
         Insert: {
-          blog: number
+          article: number
           tag: number
         }
         Update: {
-          blog?: number
+          article?: number
           tag?: number
         }
         Relationships: [
           {
             foreignKeyName: "blog_tags_relation_blog_fkey"
-            columns: ["blog"]
+            columns: ["article"]
             isOneToOne: false
-            referencedRelation: "blogs"
+            referencedRelation: "articles"
             referencedColumns: ["id"]
           },
           {

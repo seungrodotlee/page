@@ -1,6 +1,7 @@
+import { BlogSearch } from "@/@pages/blog/blog.search";
 import { Header } from "@/@shared/components/header/header.index";
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -9,8 +10,7 @@ export default function RootLayout({
     <>
       <Header current="blog">
         <Header.Accessory>
-          <input />
-          검색
+          <BlogSearch />
         </Header.Accessory>
       </Header>
       {children}

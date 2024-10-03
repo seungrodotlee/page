@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { SupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
+
 import { Database } from "./types/database.type";
 
 export function createClient(): SupabaseClient<Database, "public"> {
